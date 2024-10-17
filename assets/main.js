@@ -6,18 +6,29 @@
 
 
 const UlEl = document.querySelector('ul')
-for (let i = 0; i < 10; i++) {
-    axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-        .then(response => {
-            let randomEmail = response.data.response
-            let li = document.createElement('li')
-            li.append(randomEmail)
-            UlEl.appendChild(li)
-            }
-        )    
-}
+const buttonEl = document.querySelector('.button')
+
+
+buttonEl.addEventListener('click',generateRandomEmails)
 
 
 
-            
+
+
+
+
+
+ function generateRandomEmails(){
+    UlEl.innerText = ''
+    for (let i = 0; i < 10; i++) {
+        axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
+            .then(response => {
+                let randomEmail = response.data.response
+                let li = document.createElement('li')
+                li.append(randomEmail)
+                UlEl.appendChild(li)
+                }
+            )           
+    }
+ }           
             
