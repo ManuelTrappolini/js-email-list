@@ -6,5 +6,28 @@
 
 axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
 .then(response =>  {
-    console.log(response.data);
+    const UlEl = document.querySelector('ul')
+    console.log(UlEl); 
+    /* console.log(response.data); 
+    const randomMail = response
+    console.log(randomMail);  */
+    const randomEmail = response.data.response
+    console.log(randomEmail);
+    const randomEmailEl = document.createElement('li')
+    UlEl.appendChild(randomEmail)
+
 })
+
+
+
+function generateRandomEmails(email){
+    for (let i = 0; i <= 10; i++) {
+        const mail = email[i];
+        mail = mail*10
+    }
+    console.log(mail);
+    
+    return mail
+}
+
+generateRandomEmails(randomEmail)
