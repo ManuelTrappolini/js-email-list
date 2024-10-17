@@ -12,20 +12,16 @@ for (let i = 0; i < 10; i++) {
         .then(response => {
             let randomEmail = response.data.response
             emailArray.push(randomEmail)
+            let li = document.createElement('li')
+            li.append(randomEmail)
+            UlEl.appendChild(li)
             }
-        )
-        
-}
-for (let i = 0; i < emailArray.length; i++) {
-    const mail = emailArray[i];
-    
+           
+        )    
 }
 
 console.log(emailArray)
-/* ;
-let li = document.createElement('li')
-li.append(emailArray)
-UlEl.appendChild(li) */
+
 
             
             
