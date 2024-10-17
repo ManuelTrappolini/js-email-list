@@ -5,8 +5,6 @@
 //Inserire un bottone che al click fetchi altre 10 mail (sostituendo le altre)
 
 axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-.then(response => response.json {
+.then(response =>  {
     console.log(response.data);
-    
-
 })
